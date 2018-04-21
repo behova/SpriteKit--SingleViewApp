@@ -14,6 +14,7 @@ class GameViewController: UIViewController {
     
     let skView: SKView = {
         let view = SKView()
+        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -22,11 +23,11 @@ class GameViewController: UIViewController {
         
         
         view.addSubview(skView)
+        skView.anchorSize(to: view)
         
-        skView.topAnchor.constraint(equalTo: view.topAnchor).isActive = true
-        skView.rightAnchor.constraint(equalTo: view.rightAnchor).isActive = true
-        skView.bottomAnchor.constraint(equalTo: view.bottomAnchor).isActive = true
-        skView.leftAnchor.constraint(equalTo: view.leftAnchor).isActive = true
+        if DeviceType.isiPhoneX {
+            print("This is an iPhone X")
+        }
         
     }
 
@@ -36,3 +37,4 @@ class GameViewController: UIViewController {
     }
 
 }
+
