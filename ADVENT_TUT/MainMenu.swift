@@ -11,6 +11,8 @@ import SpriteKit
 class MainMenu: SKScene {
     override func didMove(to view: SKView) {
         print("inside main menu")
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        addPlayButton()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
@@ -21,5 +23,11 @@ class MainMenu: SKScene {
                 Manager.shared.transition(self, toScene: .Gameplay, transition: SKTransition.moveIn(with: .down, duration: 0.5))
             }
         }
+    }
+    
+    func addPlayButton() {
+        let playButton = SKSpriteNode(imageNamed: "dealbutton")
+        playButton.position = CGPoint.zero
+        addChild(playButton)
     }
 }

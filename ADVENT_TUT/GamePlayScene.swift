@@ -11,6 +11,7 @@ import SpriteKit
 class GamePlayScene: SKScene {
     override func didMove(to view: SKView) {
         print("inside gameplay")
+        backgroundColor = .cyan
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
