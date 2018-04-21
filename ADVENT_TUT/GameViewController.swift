@@ -14,7 +14,6 @@ class GameViewController: UIViewController {
     
     let skView: SKView = {
         let view = SKView()
-        view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
 
@@ -23,11 +22,13 @@ class GameViewController: UIViewController {
         
         
         view.addSubview(skView)
-        skView.anchorSize(to: view)
+        skView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
         
-        if DeviceType.isiPhoneX {
-            print("This is an iPhone X")
-        }
+        
+        let menu = MainMenu(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+        menu.scaleMode = .aspectFill
+        skView.presentScene(menu)
+        skView.ignoresSiblingOrder = true
         
     }
 

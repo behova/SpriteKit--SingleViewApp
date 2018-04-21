@@ -18,6 +18,7 @@ enum UIUserInterfaceIdiom: Int {
 }
 
 struct ScreenSize {
+    // call width/height to dynamically size an sk scene (cgfloats)
     static let width = UIScreen.main.bounds.size.width
     static let height = UIScreen.main.bounds.size.height
     static let maxHeight = max(ScreenSize.width, ScreenSize.height)
