@@ -16,6 +16,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // Add new root view controller programatically
+        window = UIWindow()
+        window?.makeKeyAndVisible()
+        
+        // Adds gameview controller(spritekit) to key (window)
+        let gameViewController = GameViewController()
+        window?.rootViewController = gameViewController
+        
         return true
     }
 
