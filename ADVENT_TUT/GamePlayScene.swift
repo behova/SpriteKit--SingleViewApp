@@ -1,5 +1,5 @@
 //
-//  MainMenu.swift
+//  GamePlayScene.swift
 //  ADVENT_TUT
 //
 //  Created by iMac on 4/21/18.
@@ -8,17 +8,16 @@
 
 import SpriteKit
 
-class MainMenu: SKScene {
+class GamePlayScene: SKScene {
     override func didMove(to view: SKView) {
-        print("inside main menu")
+        print("inside gameplay")
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         for touch in touches {
             if touch == touches.first {
-                print("going to gameplay scene")
-                //Manager.shared.transition(self, toScene: .Gameplay)
-                Manager.shared.transition(self, toScene: .Gameplay, transition: SKTransition.moveIn(with: .down, duration: 0.5))
+                print("Going to main menu scene")
+                Manager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))
             }
         }
     }

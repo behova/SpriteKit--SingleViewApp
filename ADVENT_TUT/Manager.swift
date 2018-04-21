@@ -6,15 +6,19 @@
 //  Copyright © 2018 HipsterTrikster. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 //singleton
 class Manager {
+    
+    enum SceneType {
+        case MainMenu, Gameplay
+    }
+    
     private init() {}
     static let shared = Manager()
     
     public func launch() {
-        print("manager")
         firstLaunch()
     }
     
@@ -26,6 +30,29 @@ class Manager {
             UserDefaults.standard.set(true, forKey: "isFirstLaunch")
             UserDefaults.standard.synchronize()
         }
-    
     }
+    func transition(_ fromScene: SKScene, toScene: SceneType, transition: SKTransition? = nil) {
+        guard let scene = getScene(toScene) else { return }
+        
+        if let transition = transition {
+            scene.scaleMode = .resizeFill
+            fromScene.view?.presentScene(scene, transition: transition)
+        } else {
+            scene.scaleMode = .resizeFill
+            fromScene.view?.presentScene(scene)
+        }
+       
+        
+    }
+    
+    func getScene(_ sceneType: SceneType) -> SKScene? {
+        switch sceneType {
+        case SceneType.MainMenu:
+            return MainMenu(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+        case SceneType.Gameplay:
+            return GamePlayScene(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
+        }
+    }
+    
+    
 }
