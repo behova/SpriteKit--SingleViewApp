@@ -9,7 +9,6 @@
 import UIKit
 
 // Calculates Version type
-// TODO: add types 7-8plus
 
 enum UIUserInterfaceIdiom: Int {
     case undefined
@@ -26,6 +25,7 @@ struct ScreenSize {
 }
 
 struct DeviceType {
+    // TODO: add types 7-8plus
     static let isiphone4Orless = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.maxHeight < 568.0
     static let isiPhone5 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.maxHeight == 568.0
     static let isiPhone6 = UIDevice.current.userInterfaceIdiom == .phone && ScreenSize.maxHeight == 667.0
@@ -37,6 +37,22 @@ struct DeviceType {
     static let isiPadPro = UIDevice.current.userInterfaceIdiom == .pad && ScreenSize.maxHeight == 1366.0
 }
 
+public extension CGFloat {
+    // TODO: Complete device type listing
+    public static func universalFont(size: CGFloat) -> CGFloat {
+        if DeviceType.isiphone4Orless {
+            return size * 0.6
+        }
+        if DeviceType.isiPhone6 {
+            return size * 1.0
+        }
+        if DeviceType.isiPhoneX {
+            return size * 1.0
+        } else {
+            return size
+        }
+    }
+}
 
 
 extension UIView {

@@ -18,6 +18,7 @@
 		88E2A36E208BCCFD005469B6 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A36D208BCCFD005469B6 /* Manager.swift */; };
 		88E2A370208BD386005469B6 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A36F208BD386005469B6 /* GamePlayScene.swift */; };
 		88E2A372208C019E005469B6 /* BDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A371208C019E005469B6 /* BDButton.swift */; };
+		88E2A374208C1292005469B6 /* stocky.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 88E2A373208C1292005469B6 /* stocky.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		88E2A36D208BCCFD005469B6 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		88E2A36F208BD386005469B6 /* GamePlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
 		88E2A371208C019E005469B6 /* BDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDButton.swift; sourceTree = "<group>"; };
+		88E2A373208C1292005469B6 /* stocky.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = stocky.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 		88E2A354208BB43C005469B6 /* ADVENT_TUT */ = {
 			isa = PBXGroup;
 			children = (
+				88E2A373208C1292005469B6 /* stocky.ttf */,
 				88E2A355208BB43C005469B6 /* AppDelegate.swift */,
 				88E2A357208BB43C005469B6 /* ViewController.swift */,
 				88E2A367208BB642005469B6 /* GameViewController.swift */,
@@ -73,11 +76,11 @@
 				88E2A36F208BD386005469B6 /* GamePlayScene.swift */,
 				88E2A369208BBA9F005469B6 /* Version_extension.swift */,
 				88E2A36D208BCCFD005469B6 /* Manager.swift */,
+				88E2A371208C019E005469B6 /* BDButton.swift */,
 				88E2A359208BB43C005469B6 /* Main.storyboard */,
 				88E2A35C208BB43C005469B6 /* Assets.xcassets */,
 				88E2A35E208BB43C005469B6 /* LaunchScreen.storyboard */,
 				88E2A361208BB43C005469B6 /* Info.plist */,
-				88E2A371208C019E005469B6 /* BDButton.swift */,
 			);
 			path = ADVENT_TUT;
 			sourceTree = "<group>";
@@ -143,6 +146,7 @@
 				88E2A360208BB43C005469B6 /* LaunchScreen.storyboard in Resources */,
 				88E2A35D208BB43C005469B6 /* Assets.xcassets in Resources */,
 				88E2A35B208BB43C005469B6 /* Main.storyboard in Resources */,
+				88E2A374208C1292005469B6 /* stocky.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -23,6 +23,7 @@ class MainMenu: SKScene {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         playButton.position = CGPoint.zero
         addChild(playButton)
+        //playButton.logAvailableFonts()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

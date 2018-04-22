@@ -14,9 +14,11 @@ class BDButton: SKNode {
     private var cropNode: SKCropNode
     private var action: () -> Void
     var isEnabled = true
+    var titleLable: SKLabelNode?
     
-    init(imageNamed: String, buttonAction: @escaping () -> Void) {
+    init(imageNamed: String, title: String? = "", buttonAction: @escaping () -> Void) {
         button = SKSpriteNode(imageNamed: imageNamed)
+        titleLable = SKLabelNode(text: title)
         
         mask = SKSpriteNode(color: SKColor.black, size: button.size)
         mask.alpha = 0
@@ -43,9 +45,21 @@ class BDButton: SKNode {
     
     func setupNodes() {
         button.zPosition = 0
+        
+        if let titleLable = titleLable {
+            titleLable.fontName = "StockyRegular"
+            titleLable.fontSize = CGFloat.universalFont(size: 15)
+            titleLable.fontColor = SKColor.white
+            titleLable.zPosition = 1
+            titleLable.horizontalAlignmentMode = .center
+            titleLable.verticalAlignmentMode = .center
+        }
     }
     func addNodes() {
         addChild(button)
+        if let titleLable = titleLable {
+            addChild(titleLable)
+        }
         addChild(cropNode)
     }
     
@@ -96,6 +110,48 @@ class BDButton: SKNode {
         mask.alpha = 0.0
         button.alpha = 1.0
     }
+    
+    func logAvailableFonts() {
+        
+        for family: String in UIFont.familyNames {
+            print(family)
+            for names: String in UIFont.fontNames(forFamilyName: family) {
+                print(names)
+            }
+        }
+        
+    }
+    
+    func scaleTo(ScreenWithPercentage: CGFloat) {
+        let aspectRatio = button.size.height / button.size.width
+        let screenWidth = ScreenSize.width
+        var screenHeight = ScreenSize.height
+        if DeviceType.isiPhoneX {
+            screenHeight -= 80.0
+        }
+        button.size.width = screenWidth * ScreenWithPercentage
+        button.size.height = button.size.width * aspectRatio
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
