@@ -62,21 +62,37 @@ class Manager {
         
     }
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+    func showAlert(on scene: SKScene, title: String, message: String?, style: UIAlertControllerStyle = .alert, actions: [UIAlertAction], animated: Bool = true, delay: Double = 0.0, completion: (() -> Swift.Void)? = nil) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: style)
+        
+        for action in actions {
+            alert.addAction(action)
+        }
+        
+        let wait = DispatchTime.now() + delay
+        DispatchQueue.main.asyncAfter(deadline: wait) {
+            scene.view?.window?.rootViewController?.present(alert, animated: animated, completion: completion)
+        }
+    }
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

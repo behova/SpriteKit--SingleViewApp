@@ -13,12 +13,22 @@ class GamePlayScene: SKScene {
     
     lazy var backButton: BDButton = {
         var button = BDButton(imageNamed: "yellow_button05", title: "GO BACK", buttonAction: {
-            Manager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))
+            self.showAlert()
         })
         button.zPosition = 1
         button.scaleTo(ScreenWithPercentage: 0.35)
         return button
     }()
+    
+    func showAlert() {
+        let okAction = UIAlertAction(title: "OK", style: .default) { (result) in
+            print("OK button tapped.")
+            Manager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))
+        }
+        Manager.shared.showAlert(on: self, title: "Going Back", message: "Leaving Gameplay.", style: .alert, actions: [okAction]) {
+            print("Showed Alert.")
+        }
+    }
     
     lazy var countdownLable: SKLabelNode = {
         var label = SKLabelNode(fontNamed: "StockyRegular")
