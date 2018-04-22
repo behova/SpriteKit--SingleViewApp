@@ -27,13 +27,15 @@ class GamePlayScene: SKScene {
         label.color = SKColor.white
         label.horizontalAlignmentMode = .left
         label.verticalAlignmentMode = .center
-        label.text = "\(counterStartValue)"
+        label.text = "00:00"
         return label
     }()
     
     var counter = 0
     var counterTimer = Timer()
-    var counterStartValue = 60
+    var counterStartValue = 65
+    
+    var isGameOver = false
     
     override func didMove(to view: SKView) {
         print("inside gameplay")
@@ -41,7 +43,7 @@ class GamePlayScene: SKScene {
         backButton.position = CGPoint(x: ScreenSize.width * 0.2, y: ScreenSize.height * 0.85)
         addChild(backButton)
         
-        countdownLable.position = CGPoint(x: ScreenSize.width * 0.2, y: ScreenSize.height * 0.80)
+        countdownLable.position = CGPoint(x: ScreenSize.width * 0.14, y: ScreenSize.height * 0.80)
         addChild(countdownLable)
         
         counter = counterStartValue
@@ -57,8 +59,30 @@ class GamePlayScene: SKScene {
     }
     
     @objc func decrementCounter() {
-        counter -= 1
-        countdownLable.text = "\(counter)"
+        
+        if !isGameOver {
+        
+            if counter <= 1 {
+                isGameOver = true
+                gameOver(won: false)
+            }
+            
+            counter -= 1
+            
+            let minutes = counter / 60
+            let seconds = counter % 60
+            //turnary ops to check ifs
+            let minutesText = minutes < 10 ? "0\(minutes)" : "\(minutes)"
+            let secondsText = seconds < 10 ? "0\(seconds)" : "\(seconds)"
+            
+            
+            countdownLable.text = "\(minutesText):\(secondsText)"
+        }
+        
+    }
+    
+    func gameOver(won: Bool) {
+        print("Game Over With Status: \(won)")
     }
     
     

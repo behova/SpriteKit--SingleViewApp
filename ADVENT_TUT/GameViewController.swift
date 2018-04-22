@@ -46,7 +46,7 @@ class GameViewController: UIViewController {
         skView.presentScene(menu)
         skView.ignoresSiblingOrder = true
         
-        playStopBgMusic()
+        //playStopBgMusic()
         
     }
 
