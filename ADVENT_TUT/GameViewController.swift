@@ -42,6 +42,7 @@ class GameViewController: UIViewController {
         
         let menu = MainMenu(size: CGSize(width: ScreenSize.width, height: ScreenSize.height))
         menu.scaleMode = .aspectFill
+        
         skView.presentScene(menu)
         skView.ignoresSiblingOrder = true
         
