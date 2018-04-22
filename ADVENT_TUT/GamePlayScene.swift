@@ -12,11 +12,11 @@ class GamePlayScene: SKScene {
     
     
     lazy var backButton: BDButton = {
-        var button = BDButton(imageNamed: "YButton", title: "GO BACK", buttonAction: {
+        var button = BDButton(imageNamed: "yellow_button05", title: "GO BACK", buttonAction: {
             Manager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))
         })
         button.zPosition = 1
-        button.scaleTo(ScreenWithPercentage: 1)
+        button.scaleTo(ScreenWithPercentage: 0.35)
         return button
     }()
     
@@ -33,29 +33,66 @@ class GamePlayScene: SKScene {
     
     var counter = 0
     var counterTimer = Timer()
-    var counterStartValue = 65
+    var counterStartValue = 6
     
     var isGameOver = false
+    
+    lazy var scoreLable: SKLabelNode = {
+       var label = SKLabelNode(fontNamed: "StockyRegular")
+        label.fontSize = CGFloat.universalFont(size: 35)
+        label.zPosition = 2
+        label.color = SKColor.white
+        label.horizontalAlignmentMode = .right
+        label.verticalAlignmentMode = .center
+        label.text = "\(scoreStartValue)"
+        return label
+    }()
+    
+    var score = 0
+    var scoreStartValue = 6
     
     override func didMove(to view: SKView) {
         print("inside gameplay")
         backgroundColor = .cyan
-        backButton.position = CGPoint(x: ScreenSize.width * 0.2, y: ScreenSize.height * 0.85)
+        backButton.position = CGPoint(x: ScreenSize.width * 0.24, y: ScreenSize.height * 0.85)
         addChild(backButton)
         
-        countdownLable.position = CGPoint(x: ScreenSize.width * 0.14, y: ScreenSize.height * 0.80)
+        countdownLable.position = CGPoint(x: ScreenSize.width * 0.16, y: ScreenSize.height * 0.80)
         addChild(countdownLable)
+        
+        scoreLable.position = CGPoint(x: ScreenSize.width * 0.96, y: ScreenSize.height * 0.80)
+        addChild(scoreLable)
         
         counter = counterStartValue
         startCounter()
+        
+        score = scoreStartValue
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        
+        for touch in touches {
+            if touch == touches.first {
+                print("Tapped")
+                
+                if !isGameOver {
+                    score -= 1
+                    updateScore()
+                }
+                
+                if score <= 0 {
+                    isGameOver = true
+                    gameOver(won: true)
+                }
+            }
+        }
     }
     
     func startCounter() {
         counterTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(decrementCounter), userInfo: nil, repeats: true)
+    }
+    
+    func stopCounter() {
+        counterTimer.invalidate()
     }
     
     @objc func decrementCounter() {
@@ -63,6 +100,7 @@ class GamePlayScene: SKScene {
         if !isGameOver {
         
             if counter <= 1 {
+                stopCounter()
                 isGameOver = true
                 gameOver(won: false)
             }
@@ -79,6 +117,10 @@ class GamePlayScene: SKScene {
             countdownLable.text = "\(minutesText):\(secondsText)"
         }
         
+    }
+    
+    func updateScore() {
+        scoreLable.text = "\(score)"
     }
     
     func gameOver(won: Bool) {
