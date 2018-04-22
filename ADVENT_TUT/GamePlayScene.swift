@@ -10,6 +10,7 @@ import SpriteKit
 
 class GamePlayScene: SKScene {
     
+    
     lazy var backButton: BDButton = {
         var button = BDButton(imageNamed: "YButton", title: "GO BACK", buttonAction: {
             Manager.shared.transition(self, toScene: .MainMenu, transition: SKTransition.moveIn(with: .up, duration: 0.5))

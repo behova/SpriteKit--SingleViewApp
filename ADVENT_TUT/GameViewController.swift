@@ -8,7 +8,7 @@
 
 import UIKit
 import SpriteKit
-
+import AVFoundation
 
 class GameViewController: UIViewController {
     
@@ -16,6 +16,21 @@ class GameViewController: UIViewController {
         let view = SKView()
         return view
     }()
+    
+    //audioplayer for bg music////
+    lazy var backGroundMusic: AVAudioPlayer? = {
+        guard let url = Bundle.main.url(forResource: kBackgroundMusic, withExtension: kBackgroundExt) else {
+            return nil
+        }
+        do {
+            let player = try AVAudioPlayer(contentsOf: url)
+            player.numberOfLoops = -1
+            return player
+        } catch {
+            return nil
+        }
+    }()
+    //audioplayer for bg music///
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,12 +45,46 @@ class GameViewController: UIViewController {
         skView.presentScene(menu)
         skView.ignoresSiblingOrder = true
         
+        playStopBgMusic()
+        
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    func playStopBgMusic() {
+        if ACTPlayerStats.shared.getSound() {
+            backGroundMusic?.play()
+        } else {
+            backGroundMusic?.stop()
+        }
+        
+    }
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 

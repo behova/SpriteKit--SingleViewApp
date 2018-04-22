@@ -19,6 +19,7 @@ class MainMenu: SKScene {
     }()
     
     override func didMove(to view: SKView) {
+        backgroundColor = .yellow
         print("inside main menu")
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         playButton.position = CGPoint.zero
