@@ -9,25 +9,25 @@
 import SpriteKit
 
 class MainMenu: SKScene {
+    
+   lazy var playButton: BDButton = {
+        var button = BDButton(imageNamed: "dealbutton", buttonAction: {
+            Manager.shared.transition(self, toScene: .Gameplay, transition: SKTransition.moveIn(with: .down, duration: 0.5))
+        })
+    button.zPosition = 1
+    return button
+    }()
+    
     override func didMove(to view: SKView) {
         print("inside main menu")
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
-        addPlayButton()
-    }
-    
-    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        for touch in touches {
-            if touch == touches.first {
-                print("going to gameplay scene")
-                //Manager.shared.transition(self, toScene: .Gameplay)
-                Manager.shared.transition(self, toScene: .Gameplay, transition: SKTransition.moveIn(with: .down, duration: 0.5))
-            }
-        }
-    }
-    
-    func addPlayButton() {
-        let playButton = SKSpriteNode(imageNamed: "dealbutton")
         playButton.position = CGPoint.zero
         addChild(playButton)
     }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+
+    }
+    
+
 }

@@ -17,6 +17,7 @@
 		88E2A36C208BC96D005469B6 /* MainMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A36B208BC96D005469B6 /* MainMenu.swift */; };
 		88E2A36E208BCCFD005469B6 /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A36D208BCCFD005469B6 /* Manager.swift */; };
 		88E2A370208BD386005469B6 /* GamePlayScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A36F208BD386005469B6 /* GamePlayScene.swift */; };
+		88E2A372208C019E005469B6 /* BDButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A371208C019E005469B6 /* BDButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		88E2A36B208BC96D005469B6 /* MainMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainMenu.swift; sourceTree = "<group>"; };
 		88E2A36D208BCCFD005469B6 /* Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
 		88E2A36F208BD386005469B6 /* GamePlayScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GamePlayScene.swift; sourceTree = "<group>"; };
+		88E2A371208C019E005469B6 /* BDButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BDButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +77,7 @@
 				88E2A35C208BB43C005469B6 /* Assets.xcassets */,
 				88E2A35E208BB43C005469B6 /* LaunchScreen.storyboard */,
 				88E2A361208BB43C005469B6 /* Info.plist */,
+				88E2A371208C019E005469B6 /* BDButton.swift */,
 			);
 			path = ADVENT_TUT;
 			sourceTree = "<group>";
@@ -153,6 +156,7 @@
 				88E2A370208BD386005469B6 /* GamePlayScene.swift in Sources */,
 				88E2A36C208BC96D005469B6 /* MainMenu.swift in Sources */,
 				88E2A36E208BCCFD005469B6 /* Manager.swift in Sources */,
+				88E2A372208C019E005469B6 /* BDButton.swift in Sources */,
 				88E2A36A208BBA9F005469B6 /* Version_extension.swift in Sources */,
 				88E2A358208BB43C005469B6 /* ViewController.swift in Sources */,
 				88E2A368208BB642005469B6 /* GameViewController.swift in Sources */,
