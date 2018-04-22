@@ -74,6 +74,21 @@ class Manager {
             scene.view?.window?.rootViewController?.present(alert, animated: animated, completion: completion)
         }
     }
+    
+    func share(on scene: SKScene, text: String, image: UIImage?, excludeActivityTypes: [UIActivityType]) {
+        // text to share
+        //let text = "This is some text that I want to share."
+        guard let image = UIImage(named: "playerFace") else {return}
+        // set up activity view controller
+        let shareItems = [ text, image ] as [Any]
+        let activityViewController = UIActivityViewController(activityItems: shareItems, applicationActivities: nil)
+        activityViewController.popoverPresentationController?.sourceView = scene.view // so that iPads won't crash
+        
+        // exclude some activity types from the list (optional)
+        activityViewController.excludedActivityTypes = excludeActivityTypes
+        
+        // present the view controller
+        scene.view?.window?.rootViewController?.present(activityViewController, animated: true, completion: nil)    }
 
 }
 
