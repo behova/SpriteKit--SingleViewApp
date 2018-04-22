@@ -10,6 +10,7 @@
 		8839F4F9208CEB1100008F15 /* ACTPlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */; };
 		8839F4FB208CF09500008F15 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8839F4FA208CF09400008F15 /* click.mp3 */; };
 		8839F4FD208CF09E00008F15 /* backGround.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8839F4FC208CF09E00008F15 /* backGround.mp3 */; };
+		8839F4FF208CFB4700008F15 /* ChartBoost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F4FE208CFB4700008F15 /* ChartBoost.swift */; };
 		88E2A356208BB43C005469B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A355208BB43C005469B6 /* AppDelegate.swift */; };
 		88E2A358208BB43C005469B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A357208BB43C005469B6 /* ViewController.swift */; };
 		88E2A35B208BB43C005469B6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 88E2A359208BB43C005469B6 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACTPlayerStats.swift; sourceTree = "<group>"; };
 		8839F4FA208CF09400008F15 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		8839F4FC208CF09E00008F15 /* backGround.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backGround.mp3; sourceTree = "<group>"; };
+		8839F4FE208CFB4700008F15 /* ChartBoost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBoost.swift; sourceTree = "<group>"; };
 		88E2A352208BB43C005469B6 /* ADVENT_TUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADVENT_TUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E2A355208BB43C005469B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		88E2A357208BB43C005469B6 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +88,7 @@
 				88E2A36D208BCCFD005469B6 /* Manager.swift */,
 				88E2A371208C019E005469B6 /* BDButton.swift */,
 				8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */,
+				8839F4FE208CFB4700008F15 /* ChartBoost.swift */,
 				88E2A359208BB43C005469B6 /* Main.storyboard */,
 				88E2A35C208BB43C005469B6 /* Assets.xcassets */,
 				88E2A35E208BB43C005469B6 /* LaunchScreen.storyboard */,
@@ -172,6 +175,7 @@
 				88E2A36C208BC96D005469B6 /* MainMenu.swift in Sources */,
 				88E2A36E208BCCFD005469B6 /* Manager.swift in Sources */,
 				88E2A372208C019E005469B6 /* BDButton.swift in Sources */,
+				8839F4FF208CFB4700008F15 /* ChartBoost.swift in Sources */,
 				88E2A36A208BBA9F005469B6 /* Version_extension.swift in Sources */,
 				88E2A358208BB43C005469B6 /* ViewController.swift in Sources */,
 				8839F4F9208CEB1100008F15 /* ACTPlayerStats.swift in Sources */,
