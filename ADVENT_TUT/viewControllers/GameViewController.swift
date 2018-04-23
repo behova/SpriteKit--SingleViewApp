@@ -10,6 +10,8 @@ import UIKit
 import SpriteKit
 import AVFoundation
 
+let setMusicVolumeNotificationName = Notification.Name("setMusicVolumeNotificationName")
+
 class GameViewController: UIViewController {
     
     let skView: SKView = {
@@ -35,6 +37,8 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        addNotificationObservers()
+        
         
         view.addSubview(skView)
         skView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.bottomAnchor, trailing: view.trailingAnchor)
@@ -46,8 +50,19 @@ class GameViewController: UIViewController {
         skView.presentScene(menu)
         skView.ignoresSiblingOrder = true
         
-        //playStopBgMusic()
+        // TODO: Doesnt play on first go
+        playStopBgMusic()
         
+        let info = ["volume": ACTPlayerStats.shared.getMusicVolume()]
+        NotificationCenter.default.post(name: setMusicVolumeNotificationName, object: nil, userInfo: info)
+        
+        
+        
+    }
+    
+    func addNotificationObservers() {
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.setMusicVolume(_:)), name: setMusicVolumeNotificationName, object: nil)
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +77,16 @@ class GameViewController: UIViewController {
             backGroundMusic?.stop()
         }
         
+    }
+    
+    @objc func setMusicVolume(_ info:Notification) {
+        guard let userInfo = info.userInfo else {return}
+        let volume = userInfo["volume"] as! Float
+        setBackgroundMusicVolume(to: volume)
+    }
+    
+    func setBackgroundMusicVolume(to volume: Float) {
+        backGroundMusic?.volume = volume
     }
 
 }

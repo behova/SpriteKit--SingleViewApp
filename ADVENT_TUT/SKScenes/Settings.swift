@@ -37,7 +37,7 @@ class Settings: SKScene {
         var label = SKLabelNode(fontNamed: "StockyRegular")
         label.fontSize = CGFloat.universalFont(size: 36)
         label.zPosition = 1
-        label.text = "100%"
+        label.text = "\(ACTPlayerStats.shared.getMusicVolume() * 100)"
         label.horizontalAlignmentMode = .center
         label.verticalAlignmentMode = .center
         
@@ -54,7 +54,7 @@ class Settings: SKScene {
     }()
     
     func handleMinusVolume() {
-        
+        setMusicBackground(by: -0.1)
     }
     
     lazy var plusVolumeButton: BDButton = {
@@ -67,7 +67,25 @@ class Settings: SKScene {
     }()
     
     func handlePlusVolume() {
+        setMusicBackground(by: 0.1)
+    }
+    
+    func setMusicBackground(by volume: Float) {
+        let currentVolume = ACTPlayerStats.shared.getMusicVolume()
+        var volume = currentVolume + volume
+        if volume >= 1.0 {
+            volume = 1.0
+        }
+        if volume <= 0.0 {
+            volume = 0.0
+        }
         
+        volumeLabel.text = "\(Int(volume * 100))"
+        
+        ACTPlayerStats.shared.saveMusicVolume(volume)
+        
+        let info = ["volume": ACTPlayerStats.shared.getMusicVolume()]
+        NotificationCenter.default.post(name: setMusicVolumeNotificationName, object: nil, userInfo: info)
     }
     
     

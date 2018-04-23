@@ -14,6 +14,7 @@ let kBackgroundMusic = "backGround"
 let kBackgroundExt = "mp3"
 let kScore = "kScore"
 let kBestScore = "kBestScore"
+let kMusicVolume = "kMusicVolume"
 
 enum SoundFileName: String {
     case click = "click.mp3"
@@ -55,4 +56,37 @@ class ACTPlayerStats {
     func getSound() -> Bool {
         return UserDefaults.standard.bool(forKey: kSoundState)
     }
+    
+    func saveMusicVolume(_ value: Float) {
+        UserDefaults.standard.set(value, forKey: kMusicVolume)
+        UserDefaults.standard.synchronize()
+    }
+    
+    func getMusicVolume() -> Float {
+        return UserDefaults.standard.float(forKey: kMusicVolume)
+    }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

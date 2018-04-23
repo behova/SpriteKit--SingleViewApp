@@ -10,8 +10,6 @@
 		8839F4F9208CEB1100008F15 /* ACTPlayerStats.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */; };
 		8839F4FB208CF09500008F15 /* click.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8839F4FA208CF09400008F15 /* click.mp3 */; };
 		8839F4FD208CF09E00008F15 /* backGround.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 8839F4FC208CF09E00008F15 /* backGround.mp3 */; };
-		8839F4FF208CFB4700008F15 /* ChartBoost.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F4FE208CFB4700008F15 /* ChartBoost.swift */; };
-		8839F501208D27EB00008F15 /* SKStorereview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F500208D27EB00008F15 /* SKStorereview.swift */; };
 		8839F503208D59A900008F15 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8839F502208D59A900008F15 /* Settings.swift */; };
 		88E2A356208BB43C005469B6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A355208BB43C005469B6 /* AppDelegate.swift */; };
 		88E2A358208BB43C005469B6 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88E2A357208BB43C005469B6 /* ViewController.swift */; };
@@ -31,8 +29,6 @@
 		8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ACTPlayerStats.swift; sourceTree = "<group>"; };
 		8839F4FA208CF09400008F15 /* click.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = click.mp3; sourceTree = "<group>"; };
 		8839F4FC208CF09E00008F15 /* backGround.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = backGround.mp3; sourceTree = "<group>"; };
-		8839F4FE208CFB4700008F15 /* ChartBoost.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartBoost.swift; sourceTree = "<group>"; };
-		8839F500208D27EB00008F15 /* SKStorereview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKStorereview.swift; sourceTree = "<group>"; };
 		8839F502208D59A900008F15 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		88E2A352208BB43C005469B6 /* ADVENT_TUT.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ADVENT_TUT.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		88E2A355208BB43C005469B6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -61,6 +57,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8839F504208D752800008F15 /* SKScenes */ = {
+			isa = PBXGroup;
+			children = (
+				88E2A36F208BD386005469B6 /* GamePlayScene.swift */,
+				8839F502208D59A900008F15 /* Settings.swift */,
+				88E2A36B208BC96D005469B6 /* MainMenu.swift */,
+			);
+			path = SKScenes;
+			sourceTree = "<group>";
+		};
+		8839F505208D756000008F15 /* mp3s */ = {
+			isa = PBXGroup;
+			children = (
+				8839F4FA208CF09400008F15 /* click.mp3 */,
+				8839F4FC208CF09E00008F15 /* backGround.mp3 */,
+			);
+			path = mp3s;
+			sourceTree = "<group>";
+		};
+		8839F506208D757000008F15 /* fonts */ = {
+			isa = PBXGroup;
+			children = (
+				88E2A373208C1292005469B6 /* stocky.ttf */,
+			);
+			path = fonts;
+			sourceTree = "<group>";
+		};
+		8839F507208D758A00008F15 /* Globals */ = {
+			isa = PBXGroup;
+			children = (
+				88E2A369208BBA9F005469B6 /* Version_extension.swift */,
+				88E2A371208C019E005469B6 /* BDButton.swift */,
+				88E2A36D208BCCFD005469B6 /* Manager.swift */,
+				8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */,
+			);
+			path = Globals;
+			sourceTree = "<group>";
+		};
+		8839F508208D75D100008F15 /* viewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				88E2A357208BB43C005469B6 /* ViewController.swift */,
+				88E2A367208BB642005469B6 /* GameViewController.swift */,
+			);
+			path = viewControllers;
+			sourceTree = "<group>";
+		};
 		88E2A349208BB43C005469B6 = {
 			isa = PBXGroup;
 			children = (
@@ -80,23 +123,14 @@
 		88E2A354208BB43C005469B6 /* ADVENT_TUT */ = {
 			isa = PBXGroup;
 			children = (
-				88E2A373208C1292005469B6 /* stocky.ttf */,
-				8839F4FA208CF09400008F15 /* click.mp3 */,
-				8839F4FC208CF09E00008F15 /* backGround.mp3 */,
 				88E2A355208BB43C005469B6 /* AppDelegate.swift */,
-				88E2A357208BB43C005469B6 /* ViewController.swift */,
-				88E2A367208BB642005469B6 /* GameViewController.swift */,
-				88E2A36B208BC96D005469B6 /* MainMenu.swift */,
-				8839F502208D59A900008F15 /* Settings.swift */,
-				88E2A36F208BD386005469B6 /* GamePlayScene.swift */,
-				88E2A369208BBA9F005469B6 /* Version_extension.swift */,
-				88E2A36D208BCCFD005469B6 /* Manager.swift */,
-				88E2A371208C019E005469B6 /* BDButton.swift */,
-				8839F4F8208CEB1100008F15 /* ACTPlayerStats.swift */,
-				8839F4FE208CFB4700008F15 /* ChartBoost.swift */,
-				8839F500208D27EB00008F15 /* SKStorereview.swift */,
-				88E2A359208BB43C005469B6 /* Main.storyboard */,
+				8839F508208D75D100008F15 /* viewControllers */,
+				8839F504208D752800008F15 /* SKScenes */,
+				8839F507208D758A00008F15 /* Globals */,
+				8839F506208D757000008F15 /* fonts */,
+				8839F505208D756000008F15 /* mp3s */,
 				88E2A35C208BB43C005469B6 /* Assets.xcassets */,
+				88E2A359208BB43C005469B6 /* Main.storyboard */,
 				88E2A35E208BB43C005469B6 /* LaunchScreen.storyboard */,
 				88E2A361208BB43C005469B6 /* Info.plist */,
 			);
@@ -181,13 +215,11 @@
 				88E2A36C208BC96D005469B6 /* MainMenu.swift in Sources */,
 				88E2A36E208BCCFD005469B6 /* Manager.swift in Sources */,
 				88E2A372208C019E005469B6 /* BDButton.swift in Sources */,
-				8839F4FF208CFB4700008F15 /* ChartBoost.swift in Sources */,
 				88E2A36A208BBA9F005469B6 /* Version_extension.swift in Sources */,
 				8839F503208D59A900008F15 /* Settings.swift in Sources */,
 				88E2A358208BB43C005469B6 /* ViewController.swift in Sources */,
 				8839F4F9208CEB1100008F15 /* ACTPlayerStats.swift in Sources */,
 				88E2A368208BB642005469B6 /* GameViewController.swift in Sources */,
-				8839F501208D27EB00008F15 /* SKStorereview.swift in Sources */,
 				88E2A356208BB43C005469B6 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
