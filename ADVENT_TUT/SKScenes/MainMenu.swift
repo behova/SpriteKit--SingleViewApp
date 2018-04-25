@@ -40,6 +40,9 @@ class MainMenu: SKScene {
         
         settingsButton.position = CGPoint(x: ScreenSize.width * 0.0, y: ScreenSize.height * -0.2)
         addChild(settingsButton)
+        
+        playButton.button.popUp()
+        settingsButton.button.bounce()
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
